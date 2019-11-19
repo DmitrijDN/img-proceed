@@ -9,4 +9,4 @@ After that in folter will appear several images and tesseract proceeded files.
 1. brew install tesseract
 2. brew install opencv
 3. Install Python 3
-4. Install rewuired pyton lib (for instance sudo pip3 install imutils)
+4. Install required python lib (for instance sudo pip3 install imutils)
