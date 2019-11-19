@@ -5,7 +5,6 @@ FOLDER_NAME=$(pwd)/receipt/
 IMG_NAME=$FOLDER_NAME"receipt"
 IMG_EXT=".jpg"
 IMG_FULL_NAME=$IMG_NAME$IMG_EXT
-IMG_OUTPUT=$IMG_NAME"_grayscaled"$IMG_EXT
 
 OUTPUT_TEXT=$FOLDER_NAME/text
 
@@ -16,7 +15,7 @@ echo -e "\n$SPLITTER\n"
 
 #CONVERT STAGE
 echo "Convert stage"
-CONVERT_OUTPUT=$IMG_NAME"_converted"$IMG_EXT
+CONVERT_OUTPUT=$IMG_NAME"_dpi"$IMG_EXT
 convert $IMG_FULL_NAME -units "PixelsPerInch" -density 300 -resample "300x" $CONVERT_OUTPUT
 echo -e "\n$SPLITTER\n"
 
@@ -41,7 +40,7 @@ echo -e "\n$SPLITTER\n"
 #CROPPED GRAYSCALE
 echo "Grayscale Cropped stage"
 GRAYSCALE_CROPPED_OUTPUT=$IMG_NAME"_grayscale_cropped"$IMG_EXT
-convert $IMG_FULL_NAME -type Grayscale $GRAYSCALE_CROPPED_OUTPUT
+convert $CROPPED_OUTPUT -type Grayscale $GRAYSCALE_CROPPED_OUTPUT
 echo -e "\n$SPLITTER\n"
 
 #NOISE
